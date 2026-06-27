@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishGuard AI - Scan History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav style="background:#111827;padding:15px;border-bottom:2px solid #00e5ff;margin-bottom:20px;">
+
+<a href="/" style="color:white;text-decoration:none;margin-right:25px;font-weight:bold;">
+🏠 Scanner
+</a>
+
+<a href="/history" style="color:white;text-decoration:none;margin-right:25px;font-weight:bold;">
+📜 History
+</a>
+
+<a href="/dashboard" style="color:white;text-decoration:none;font-weight:bold;">
+📊 Dashboard
+</a>
+
+</nav>
+
+<div class="container">
+
+    <h1>📜 Scan History</h1>
+
+    {% if scans %}
+
+    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+
+        <tr style="background:#1a1a1a;">
+            <th style="padding:10px;">ID</th>
+            <th>Email Preview</th>
+            <th>Score</th>
+            <th>Risk</th>
+            <th>Date</th>
+        </tr>
+
+        {% for scan in scans %}
+        <tr>
+            <td>{{ scan[0] }}</td>
+            <td>{{ scan[1][:60] }}...</td>
+            <td>{{ scan[2] }}/100</td>
+            <td>{{ scan[3] }}</td>
+            <td>{{ scan[4] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <h3>No scans found.</h3>
+
+    {% endif %}
+
+    <br><br>
+
+<a href="/download-csv">
+    <button>📥 Download CSV</button>
+</a>
+
+<br><br>
+
+    <a href="/">
+        <button>⬅ Back to Scanner</button>
+    </a>
+
+</div>
+</body>
+</html>

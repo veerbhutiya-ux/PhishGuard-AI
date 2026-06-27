@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishGuard AI Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<nav style="background:#111827;padding:15px;border-bottom:2px solid #00e5ff;margin-bottom:20px;">
+
+<a href="/" style="color:white;text-decoration:none;margin-right:25px;font-weight:bold;">
+🏠 Scanner
+</a>
+
+<a href="/history" style="color:white;text-decoration:none;margin-right:25px;font-weight:bold;">
+📜 History
+</a>
+
+<a href="/dashboard" style="color:white;text-decoration:none;font-weight:bold;">
+📊 Dashboard
+</a>
+
+</nav>
+
+
+<div class="container">
+
+<h1>📊 PhishGuard AI Dashboard</h1>
+
+<hr>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;">
+
+<div style="background:#10253f;padding:20px;border-radius:10px;width:200px;text-align:center;">
+<h2>{{ total }}</h2>
+<p>Total Scans</p>
+</div>
+
+<div style="background:#8b0000;padding:20px;border-radius:10px;width:200px;text-align:center;">
+<h2>{{ high }}</h2>
+<p>High Risk</p>
+</div>
+
+<div style="background:#d97706;padding:20px;border-radius:10px;width:200px;text-align:center;">
+<h2>{{ medium }}</h2>
+<p>Medium Risk</p>
+</div>
+
+<div style="background:#15803d;padding:20px;border-radius:10px;width:200px;text-align:center;">
+<h2>{{ low }}</h2>
+<p>Low Risk</p>
+</div>
+
+</div>
+
+<br><br>
+<hr>
+
+<h2>📈 Risk Distribution</h2>
+
+<div style="width:400px; margin:auto;">
+    <canvas id="riskChart"></canvas>
+</div>
+
+<script>
+const ctx = document.getElementById('riskChart');
+
+new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['High', 'Medium', 'Low'],
+        datasets: [{
+            data: [{{ high }}, {{ medium }}, {{ low }}],
+            backgroundColor: [
+                '#ff3b30',
+                '#ff9500',
+                '#34c759'
+            ]
+        }]
+    }
+});
+</script>
+
+<hr>
+
+<h2>📊 Scan Statistics</h2>
+
+<div style="width:600px; margin:auto;">
+    <canvas id="barChart"></canvas>
+</div>
+
+<script>
+const bar = document.getElementById('barChart');
+
+new Chart(bar, {
+    type: 'bar',
+    data: {
+        labels: ['High', 'Medium', 'Low'],
+        datasets: [{
+            label: 'Number of Emails',
+            data: [{{ high }}, {{ medium }}, {{ low }}],
+            backgroundColor: [
+                '#ff3b30',
+                '#ff9500',
+                '#34c759'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+<a href="/">
+<button>← Back to Scanner</button>
+</a>
+
+</div>
+
+</body>
+</html>

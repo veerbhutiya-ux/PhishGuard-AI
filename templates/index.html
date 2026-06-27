@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PhishGuard AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <a href="/">🏠 Scanner</a>
+    <a href="/history">📜 History</a>
+    <a href="/dashboard">📊 Dashboard</a>
+    <a href="/download-pdf">📄 Report</a>
+    <a href="/help">❓ Help</a>
+</nav>
+
+
+<div class="container">
+
+<h1 style="font-size:48px;color:#00d4ff;margin-bottom:10px;">
+🛡️ PhishGuard AI
+</h1>
+<h2 style="color:white;">
+AI-Powered Email Security Platform
+</h2>
+
+<p style="font-size:18px;color:#bcd;">
+Detect phishing emails, malicious URLs and cyber threats using Artificial Intelligence.
+</p>
+
+<form action="/analyze" method="POST">
+
+<label>Email Content</label>
+
+<textarea
+name="email_content"
+placeholder="Paste suspicious email here..."
+rows="12"
+required>
+</textarea>
+
+<label>Suspicious URL (Optional)</label>
+
+<input
+type="text"
+name="url"
+placeholder="https://example.com">
+
+<button type="submit">
+
+🔍 Analyze Email
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

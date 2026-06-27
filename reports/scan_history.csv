@@ -1,0 +1,96 @@
+ID,Score,Risk,Date
+7,"Subject: Verify Your Email Account
+
+Dear User,
+
+We noticed unusual activity on your email account.
+
+Please verify your account within 48 hours to avoid temporary suspension.
+
+Click the link below to verify your account.
+
+Thank you,
+
+Support Team",30,Low,2026-06-26 18:33:16
+6,gyjgggugu.ukh,0,Low,2026-06-26 18:11:56
+5,"Subject: URGENT: Security Alert
+
+Dear Customer,
+
+Your bank account has been suspended because of suspicious activity.
+
+Verify your account immediately.
+
+Click the link below and enter your username, password, debit card number, CVV, and OTP to restore access.
+
+Failure to verify within 24 hours will permanently suspend your account.
+
+Thank you,
+
+Bank Security Department",100,High,2026-06-26 17:34:15
+4,"Subject: Verify Your Email Account
+
+Dear User,
+
+We noticed unusual activity on your email account.
+
+Please verify your account within 48 hours to avoid temporary suspension.
+
+Click the link below to verify your account.
+
+Thank you,
+
+Support Team",30,Low,2026-06-26 17:33:16
+3,"Subject: Project Meeting Reminder
+
+Hello Veer,
+
+This is a reminder that our project meeting is scheduled for tomorrow at 10:30 AM.
+
+Please bring your laptop and the latest project documentation.
+
+If you have any questions, feel free to contact me.
+
+Thank you.
+
+Best regards,
+
+Project Coordinator",0,Low,2026-06-26 17:32:10
+2,"Subject: URGENT: Your Bank Account Will Be Suspended
+
+Dear Customer,
+
+Your bank account has been temporarily suspended due to unusual activity.
+
+To avoid permanent suspension, verify your account immediately.
+
+Click the link below:
+
+http://secure-bank-login.xyz/verify
+
+Enter your username, password, debit card number, CVV, and OTP to restore access.
+
+Failure to verify within 24 hours will result in account closure.
+
+Thank you,
+
+Bank Security Team",100,High,2026-06-26 17:31:07
+1,"Subject: URGENT: Your Bank Account Will Be Suspended
+
+Dear Customer,
+
+Your bank account has been temporarily suspended due to unusual activity.
+
+To avoid permanent suspension, verify your account immediately.
+
+Click the link below:
+
+http://secure-bank-login.xyz/verify
+
+Enter your username, password, debit card number, CVV, and OTP to restore access.
+
+Failure to verify within 24 hours will result in account closure.
+
+Thank you,
+
+Bank Security Team",100,High,2026-06-26 17:30:57

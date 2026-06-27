@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>PhishGuard AI</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav style="background:#111827;padding:15px;border-bottom:2px solid #00e5ff;margin-bottom:20px;">
+
+<a href="/" style="color:white;text-decoration:none;margin-right:25px;font-weight:bold;">
+🏠 Scanner
+</a>
+
+<a href="/history" style="color:white;text-decoration:none;margin-right:25px;font-weight:bold;">
+📜 History
+</a>
+
+<a href="/dashboard" style="color:white;text-decoration:none;font-weight:bold;">
+📊 Dashboard
+</a>
+
+</nav>
+
+<div class="container">
+
+<h1>🛡️ PhishGuard AI Report</h1>
+
+<hr>
+
+<h2>Threat Score</h2>
+
+<h1>{{ score }}/100</h1>
+
+<div style="width:100%;background:#333;border-radius:10px;">
+
+<div
+style="width:{{ score }}%;
+background:red;
+height:25px;
+border-radius:10px;">
+
+</div>
+
+</div>
+
+<br>
+
+<h2>
+
+Risk Level
+
+{% if risk=="High" %}
+
+🔴 HIGH
+
+{% elif risk=="Medium" %}
+
+🟡 MEDIUM
+
+{% else %}
+
+🟢 LOW
+
+{% endif %}
+
+</h2>
+
+<hr>
+
+<h2>Detected Threats</h2>
+
+<ul>
+
+{% for word in keywords %}
+
+<li>✔ {{ word }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<hr>
+
+<h2>🤖 AI Analysis</h2>
+
+<div style="
+background:#10253f;
+padding:20px;
+border-radius:10px;
+margin-top:15px;
+margin-bottom:20px;
+">
+
+<p>{{ explanation }}</p>
+
+</div>
+
+<h2>Security Recommendations</h2>
+
+<ul>
+
+<li>Do not click suspicious links.</li>
+
+<li>Never share passwords.</li>
+
+<li>Never share OTP.</li>
+
+<li>Contact the official organization directly.</li>
+
+<li>Delete suspicious emails immediately.</li>
+
+</ul>
+
+<hr>
+
+<h3>Email Submitted</h3>
+
+<p>{{ email }}</p>
+
+<h3>URL Submitted</h3>
+
+<p>{{ url }}</p>
+
+<br>
+
+<a href="/">
+
+<button>
+
+Analyze Another Email
+
+</button>
+
+</a>
+<br><br>
+
+<a href="/download-pdf">
+    <button>📄 Download PDF Report</button>
+</a>
+</div>
+
+</body>
+
+</html>
